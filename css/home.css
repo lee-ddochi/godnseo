@@ -1,0 +1,203 @@
+@font-face{
+    font-family: 'MyFont';
+    src: url(../BusanFont.ttf) format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'MyFont' , sans-serif;
+    margin: 0; padding: 0; width: 100vw; 
+    /* box-sizing: border-box;   */
+    overflow-x: hidden;
+}
+a{text-decoration: none; color: #ffffff;}
+/* 기초작업 */
+header{display: flex; width: 100vw; height: 8rem;justify-content: space-between; 
+    align-items: center; background-color: #002d72;}
+.logo{width: 7rem; height: 7rem; margin-left: 10rem; display: flex;
+justify-content: center; align-items: center;}
+.logo img{width: 90%; height: 90%;}
+nav{display: flex; color: #ffffff; justify-content: end; width: 50rem;
+font-size: 1rem; font-weight: bold; margin-left: 30rem;}
+nav div {margin: 1rem;}
+.hdicons{width: 12rem;height: 7rem; margin-right: 10rem; color: #ffffff;
+display: flex; justify-content: center; align-items: center;}
+.naticon{background-image: url(../image/home/korea.png); width: 3rem; height: 2rem;
+background-size: cover; background-repeat: no-repeat; background-position: center;
+z-index: 1;}
+.naticon:hover .naticonsub{opacity: 1;} 
+.naticonsub{position: relative; top: 4rem; right: 1.8rem; background-color: #002d72; width: 5.5rem;
+padding: 0.5rem; border: 0.2rem solid #ff5910; border-radius: 10%; opacity: 0;;
+transition: 0.5s;}
+.naticonsub div:hover{cursor: pointer;}
+.subnat{display: flex; justify-content: start; align-items: center;}
+.naticonsub img {width: 3rem; height: 2rem; padding: 0.2rem; margin-right: 0.2rem;}
+.hamburger {display: none; cursor: pointer;font-size: 2rem;color: #ffffff;}
+/* 헤더 */
+
+.modal{display: none;}
+/* 모달 */
+.sec1{margin:auto; width: 100vw; height:52rem; position: relative; z-index: 0; overflow: hidden;
+display: flex; flex-direction: column;}
+#slides{width: calc(100% * 6); height: 100%; display: flex; transition: transform 0.5s ease-in-out;}
+#slides div {
+    width: 100vw; height: 100%;
+    background-size: cover;background-position: center;
+    flex-shrink: 0;
+}
+
+.arr {
+    width: 2rem; 
+    height: 3rem; 
+    background-color: #ffffff;
+    clip-path: polygon(20% 0%, 100% 50%, 20% 100%, 0% 80%, 50% 50%, 0% 20%);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.btns{display: flex;  justify-content: space-around; align-items: center;
+padding: 0.5rem 2rem ; width: 98%; height: 5.2rem; background-color: #002d72;
+position: relative;}
+#leftBtn {position: relative; left: 2rem; transform: rotate(180deg);}
+#rightBtn {position: relative; right: 4rem;}
+#circles{width: 18rem; height: 3rem; margin: auto; flex-grow: 1;
+display: flex; justify-content: center; align-items: center;}
+.circle{width: 4rem; height: 0.5rem; background-color: #ffffff;
+border-radius: 10%; margin: 0 0.5rem; cursor: pointer;}
+.circle.on{background-color: #ff5910;}
+/* 섹션1(슬라이드) */
+
+canvas{width: 100vw; height: 46rem; display: block;}
+.sloganupText{display: flex; flex-direction: column; justify-content: center; align-items: center;
+margin-top: 18rem; background-color: #002d72; color: #ffffff; height: 19rem;}
+.sloganupText h1 {font-size: 45px; font-weight: bold;}
+.sloganupText h2 {font-size: 25px; font-weight: bold;}
+.slogan{margin: 10rem auto; width: 40%; height: 30rem; position: relative; z-index: 1;
+    position: relative; top: -48rem; display: block;
+display: flex; justify-content: start; border: 4px solid rgba(0,45,114,0.5);
+background-image: url(../image/home/sloganimage.png); background-position: center;
+background-repeat: no-repeat; background-size: cover; border-radius: 20px 20px 10px 10px;}
+.slogan img {width: 300px; height: 100px; position: relative; top: 3rem; left: 27rem;
+opacity: 0; transition: opacity 2s ease-out;}
+/* 슬로건& 캔버스 */
+
+/* 폭죽 */
+#firework{width: 20rem; height: 10rem;  position: relative; 
+display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; }
+#firework h1{z-index: 0; position: relative; top: 1rem;}
+.firework-effect{position: absolute; width: 15px; height: 15px; 
+background: radial-gradient(circle, rgb(173, 197, 116) 0%, rgba(255, 0, 0, 1) 80%);
+border-radius: 50%; animation: explode 1s ease-in-out infinite;}
+@keyframes explode{
+    0%{transform: scale(0); opacity: 0;}
+    50%{transform: scale(1.2); opacity: 1;}
+    100%{transform: scale(1.5); opacity: 0;}
+}
+
+
+.fesSec{margin:-30rem auto; width:100vw;height: 45rem; background-color: #002d72; 
+display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.fesSec h1{font-size: 50px; color: #ffffff; font-weight: bold; padding-bottom: 2rem;
+opacity: 0; transform: translate(50px,50px); transition: opacity 1s ease-out, transform s ease-out; }
+.fesoutBox{display: flex;justify-content: space-between; align-items: center; width: 90%;}
+.fesinBox{display: flex; margin: 1rem; width: 75%; height: 18rem; border: 3px solid rgba(3,3,3,0.3); 
+   justify-content: center; align-items: center; border-radius: 1rem; background-color: #ffffff;}
+.fesinBox > div {margin: 1rem; display: flex;flex-direction: column; justify-content: center;
+line-height: 1rem; color: #002d72;}
+.fesinBox > img {width: 12rem; height: 15rem; border-radius: 20px; padding: 0.5rem;}  
+/* 페스티벌 */
+
+.sec2outBox{margin: 50rem auto 6rem; width: 100%; height: 100rem; 
+display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.sec2inBox{width: 60%; height: 33%; display: flex; justify-content: space-between; align-items: center;}
+.sec2inBox > .textBox{ width: 23rem;margin: 1rem; height: 22rem;
+display: flex; flex-direction: column; justify-content: center; align-items: center;
+border: 15px solid rgba(0,45,114,0.7); line-height: 1.5rem; border-radius: 0.5rem;}
+.sec2inBox > .textBox > h1{opacity: 0; transform: translateX(-100px); 
+    transition: opacity 2s ease-out, transform 2s ease-out; font-size: 50px;}
+.food .textBox h1{opacity: 0; transform: translateX(100px);} 
+.textBox div{opacity: 0; transition: opacity 4s ease-out;}
+.textBox button{opacity: 0; transition: opacity 4s ease-out; margin-top: 1rem;
+background-color: #002d72; color: #ffffff; padding: 0.5rem 1.5rem; border-radius: 10px;
+font-weight: bold; cursor: pointer;}
+.textBox button:hover{font-size: 15px; }
+.textBox h1{font-size: 50px; color: #002d72; font-weight: bold; }
+.sec2inBox > .imageBox{border: 1px solid blue; width:50rem; margin: 1rem;
+    border: 3px solid rgba(0,45,114,0.7); height: 30rem; border-radius: 1.2rem;}
+.sec2 img{width: 100%; height: 100%; border-radius: 1rem;}
+.textBox div{ color: rgba(3,3,3,0.8); font-weight: bold;}
+/* sec2 */
+
+footer{margin: 3rem auto 0; width: 96vw; height: 8rem; background-color: #000000; 
+padding: 1rem 3rem; color: rgba(255,255,255,0.8);}
+footer > div {line-height: 0.5rem;display: flex; justify-content: space-between; align-items: center;
+width: 93%;}
+/* footer */
+
+
+#topBtn{position: fixed; top: 88%; right: 3rem; display: flex; justify-content: center; align-items: center;
+    width: 5rem; height: 5rem; background-color: rgba(255,255,255,0.8); color: rgba(3,3,3,0.8);
+     border-radius: 1rem; border:0.2rem solid black; cursor: pointer;
+     opacity: 0; visibility: hidden; transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;}
+    #topBtn:hover {
+        font-size: 20px; background-color: rgba(0,45,114,1); color: #ffffff;
+        border:0.2rem solid #ff5910;
+    }
+/* topBtn */
+
+@media (max-width: 768px) {
+    header{display: flex; align-items: center; margin-bottom: 2rem; padding: 0 1rem;
+        justify-content: space-between; width: 100%; height: 6rem;}
+    .hdicons{display: flex; justify-content: space-around; align-items: center; margin-right: 2rem;}
+    header nav{display: none;}
+    .logo{width: 6rem; height: auto;  margin-left: 1rem;}
+    .hamburger{display: block; font-size: 2rem; padding: 0.5rem;}
+
+    .modal{display: flex; flex-direction:row; justify-content: center;
+         position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+        background-color: rgba(3,3,3,0.8); z-index: 1; opacity: 0; visibility: hidden; 
+        transition: opacity 0.3s ease-in-out, visibility 0.3s;}
+    .modal.on{opacity: 1; visibility: visible;}
+    .modal nav{margin-left: 10%; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; width: 100%; text-align: center;} 
+    .modal nav div{padding: 3rem; font-size: 2rem; padding: 1rem;}
+    .modal button{width: 2rem; height: 2rem; margin: 1rem; font-size: 2.5rem; line-height: 0.5rem;
+    text-indent: -0.05rem; color: #ffffff;background-color: rgba(3,3,3,0.8); border: none;
+    cursor: pointer;}
+
+    
+    .sec1{height: 35rem;}
+    #slides{width:100%; height: 100%;}
+    #slides div{ width: 100%; height: 100%; background-size: cover; background-position: center;}
+    .btns{width: 100%; height: 3rem;justify-content: space-between;}
+    #leftBtn{left: 0;}
+    #rightBtn{right: 5rem;}
+    .arr{width: 1.5rem; height: 2.5rem;}
+    #circles{position: relative; left: -2rem; width: auto;}
+    .circle{width: 1.2rem; height: 0.5rem;}
+
+    .sloganupText{margin: 10rem auto;}
+    canvas{display:none ;}
+    .slogan{top: 0; margin: 0; width: 98%;}
+    .slogan img{width: 40%; top: 18%; left: 55%;}
+
+    
+    #firework{width: 80%; height: auto; padding: 2rem 0;}
+    #firework h1{top: 2rem;}
+    .fesSec{margin: 10rem auto; height: auto;}
+    .fesoutBox{display: flex; flex-direction:column; justify-content: center; align-items: center;}
+    .fesinBox{width: 90%; flex-direction: row; height: auto; padding: 2em; }
+    .fesinBox div{line-height: 2rem;}
+    .fesinBox img{width: 50%; height: 20rem; padding: 1rem; }
+    .fesinBox h4, .fesinBox h5 {font-size: 1.2rem; }  
+
+    .sec2outBox{margin: 10rem auto; height: 90rem;}
+    .sec2inBox{display: flex; width: 100%; height: 20rem; margin: auto 2rem;}
+    .textBox > div > p {display: none;}
+    .textBox{width: 20%;}
+    .sec2inBox > .imageBox{height: 24rem;}
+    .imageBox img{width:100%; height: 24rem;}
+
+    footer{height: 3rem; margin-top: -5rem; }
+    footer p {display: none;}
+    #topBtn{z-index: 2;}
+}

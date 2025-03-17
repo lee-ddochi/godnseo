@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon" href="./image/favicon.png" type="jpg/png">
+    <title>Welcome to Haeundae</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./image/home/logo.png" alt="로고">
+        </div>     
+        <nav>
+            <div><a href="./home.html">HOME</a></div>
+            <div><a href="./tour.html">TOUR</a></div>
+            <div><a href="./food.html">FOOD</a></div>
+            <div><a href="./stay.html">STAY</a></div>
+            <div><a href="./info.html">INFO</a></div>
+        </nav>
+        <div class="hdicons">
+            <div class="naticon">
+                <div class="naticonsub">
+                    <div class="subnat"><img src="./image/home/america.png" alt="usa">ENG</div>
+                    <div class="subnat"><img src="./image/home/japan.png" alt="japan">JAP</div>
+                    <div class="subnat"><img src="./image/home/china.png" alt="china">CHI</div>
+                </div>
+            </div>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+    <!-- header end-->
+
+    <div class="modal"> 
+        <nav>
+            <div><a href="./tour.html">TOUR</a></div>
+            <div><a href="./food.html">FOOD</a></div>
+            <div><a href="./stay.html">STAY</a></div>
+            <div><a href="./info.html">INFO</a></div>
+        </nav>
+        <button id="mocloseBtn">×</button>
+    </div>
+    <section class="sec1">
+        <div id="slides">
+            <div style="background-image: url('./image/home/mainimage1.jpg');"></div>
+            <div style="background-image: url('./image/home/mainimage2.jpg');"></div>
+            <div style="background-image: url('./image/home/mainimage3.jpg');"></div>
+            <div style="background-image: url('./image/home/mainimage4.jpg');"></div>
+        </div>
+        <div class="btns"> 
+            <div id="leftBtn" class="arr"></div>
+            <div id="circles">
+                <div class="circle on"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        <div id="rightBtn" class="arr"></div>
+        </div>   
+    </section>
+    <!-- slide end -->
+    <div class="sloganupText">
+        <h1>Welcome to Haeundae</h1>
+        <h2>살기 좋은 도시 오고 싶은 도시</h2>
+        <h3>해운대에 오신 것을 환영합니다.</h3>
+    </div>
+    <canvas></canvas>
+    <div class="slogan">
+        <img src="./image/home/slogan.png" alt="해운대슬로건">
+    </div>
+    <!-- slogan end -->
+    <section class="fesSec">       
+            <div id="firework">
+                <h1>FESTIVAL</h1>
+            </div>      
+        <div class="fesoutBox">
+            <div class="fesinBox">
+                <div>
+                    <h4>해운대 빛 축제</h4>
+                    <h5>기간:<br> 24.12.14(토)~25.02.02(일)</h5>
+                    <h5>장소: <br>부산광역시 해운대구</h5>
+                </div>
+                <img src="./image/home/lightfestival.jpg" alt="빛축제">
+            </div>
+            <div class="fesinBox">
+                <div>
+                    <h4>부산 북극곰 축제</h4>
+                    <h5>기간: <br>25.02.07(금)~25.02.09(일)</h5>
+                    <h5>장소: <br>부산광역시 수영구</h5>
+                </div>
+                <img src="./image/home/polabear.jpg" alt="북극곰축제">
+            </div>
+            <div class="fesinBox">
+                <div>
+                    <h4>인터내셔널 <br>키스포츠페스티벌 부산</h4>
+                    <h5>기간: <br>25.07.12(토)~25.07.13(일)</h5>
+                    <h5>장소:<br> 부산광역시 해운대구 BEXCO</h5>
+                </div>
+                <img src="./image/home/kids.jpg" alt="키즈페스티벌">
+            </div>
+            <div class="fesinBox">
+                <div>
+                    <h4>페스티벌 시월</h4>
+                    <h5>기간:<br> 25.09.21(토)~25.10.03(일)</h5>
+                    <h5>장소: <br>부산광역시 해운대구 BEXCO</h5>
+                </div>
+                <img src="./image/home/siwol.jpg" alt="페스티벌시월">
+            </div>
+        </div>
+    </section>
+    <!-- festival end -->
+    <section class="sec2outBox">
+        <div class="sec2inBox tour">
+            <div class="sec2 textBox"> 
+                <h1>TOUR</h1>
+                <div>
+                    <p>부산 해운대는 아름다운 해변과<br> 다양한 관광 명소가 가득한 지역입니다.</p>
+                    <p>자연을 만끽할 수 있는<br>관광지에서 즐거운 시간을 보낼 수 있습니다.</p>
+                </div>
+                <button><a href="./tour.html">자세히보기</a></button>
+            </div>
+            <div class="sec2 imageBox">
+                <img src="./image/home/sec2tour.png" alt="">
+            </div>
+        </div>
+        <div class="sec2inBox food">
+            <div class="sec2 imageBox">
+                <img src="./image/home/sec2food.jpg" alt="">
+            </div>
+            <div class="sec2 textBox"> 
+                <h1>FOOD</h1>
+                <div>
+                    <p>부산 해운대는 신선한 해산물과  <br>지역 특산물로 유명한 미식의 성지입니다.</p>
+                    <p>다양한 카페와 레스토랑에서 바다를 보며<br> 특별한 식사를 경험할 수 있습니다.</p>
+                </div>
+                <button><a href="./food.html">자세히보기</a></button>
+            </div>
+        </div>
+        <div class="sec2inBox stay">
+            <div class="sec2 textBox"> 
+                <h1>STAY</h1>
+                <div>
+                    <p>해운대에는  5성급 호텔들이 모여 있어 <br>최상의 서비스와 바다 전망을 제공합니다.</p>
+                    <p>럭셔리한 시설과 편안한 휴식으로 <br>특별한 경험을 선사합니다.</p>
+                </div>
+                <button><a href="./stay.html">자세히보기</a></button>
+            </div>
+            <div class="sec2 imageBox">
+                <img src="./image/home/sec2stay.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- sec2 end -->
+    <footer>
+        <div>
+            <img src="./image/home/haeundaelogo.png" alt="">
+            <p>웹사이트 교육용 홈페이지 입니다.</p>
+            <div>
+                <p>팀장: 김창우</p>
+                <p>부팀장: 박지훈</p>
+                <p>팀원: 장국현</p>
+                <p>팀원: 이성현</p>
+                <p>팀원: 김정헌</p>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- footer end -->
+     <div id="topBtn">
+        TOP▲
+     </div>
+     <!-- top버튼 -->
+     <script src="./js/home.js"></script>
+</body>
+</html>

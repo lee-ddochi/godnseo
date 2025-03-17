@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해운대 관광 정보</title>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2237e1d4164afe675ac45fd0c6310ad4&libraries=services"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .weather-box,
+        .forecast-box,
+        .search-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .location-btn {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
+            background: blue;
+            color: white;
+            border: none;
+        }
+
+        .dropdown {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .dropdown button {
+            display: block;
+            margin: 5px auto;
+            padding: 8px;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>해운대 관광 정보</h1>
+        <div class="weather-box">
+            <h2>현재 날씨</h2>
+            <p id="weather">Loading...</p>
+        </div>
+
+        <div class="forecast-box">
+            <h2>앞으로 6일간의 날씨</h2>
+            <ul id="forecast">Loading...</ul>
+        </div>
+
+        <h2>길찾기</h2>
+        <button class="location-btn" onclick="toggleDropdown()">관광지 선택</button>
+        <div id="location-dropdown" class="dropdown">
+            <button onclick="openDirections('해운대해수욕장')">해운대해수욕장</button>
+            <button onclick="openDirections('송정해수욕장')">송정해수욕장</button>
+            <button onclick="openDirections('동백섬')">동백섬</button>
+            <button onclick="openDirections('달맞이길')">달맞이길</button>
+            <button onclick="openDirections('더베이101')">더베이101</button>
+            <button onclick="openDirections('센텀시티')">센텀시티</button>
+            <button onclick="openDirections('해운대전통시장')">해운대전통시장</button>
+            <button onclick="openDirections('블루라인파크')">블루라인파크</button>
+        </div>
+
+        <div class="search-box">
+            <h2>주변 검색</h2>
+            <p>근처의 맛집, 카페, 편의시설을 검색하세요.</p>
+            <input type="text" id="searchQuery" placeholder="예: 카페, 맛집, 편의점">
+            <button id="searchBtn">검색</button>
+        </div>
+    </div>
+
+    <script>
+        const weatherApiKey = 'a64a5c4f491cc98941022c90285932bc';
+        const city = 'Busan';
+
+        function fetchWeather() {
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric&lang=kr`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('weather').innerText = `${data.weather[0].description}, 온도: ${data.main.temp}°C, 강수 확률: ${data.clouds.all}%`;
+                })
+                .catch(() => document.getElementById('weather').innerText = '날씨 정보 불러오기 실패');
+        }
+
+        function fetchForecast() {
+            const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}&units=metric&lang=kr`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const forecasts = data.list
+                        .filter((_, index) => index % 8 == 0)
+                        .slice(0, 4)
+                        .map(entry => {
+                            const date = new Date(entry.dt * 1000).toLocaleDateString('ko-KR');
+                            return `<li>${date}: ${entry.weather[0].description}, 온도: ${entry.main.temp}°C</li>`;
+                        })
+                        .join('');
+
+                    document.getElementById('forecast').innerHTML = forecasts;
+                })
+                .catch(() => {
+                    document.getElementById('forecast').innerHTML = '날씨 예보 불러오기 실패';
+                });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchWeather();
+            fetchForecast();
+        });
+
+        function openDirections(place) {
+            window.open(`https://map.kakao.com/?q=${place}`, '_blank');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('location-dropdown');
+            dropdown.style.display = dropdown.style.display == 'block' ? 'none' : 'block';
+        }
+
+        function openSearchResults() {
+            const query = document.getElementById('searchQuery').value.trim();
+            if (!query) {
+                alert('검색어를 입력하세요!');
+                return;
+            }
+            const searchUrl = `https://map.kakao.com/?q=${query}`;
+            window.open(searchUrl, '_blank');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('searchBtn').addEventListener('click', openSearchResults);
+        });
+
+
+    </script>
+</body>
+
+</html>

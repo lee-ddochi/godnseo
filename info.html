@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/info.css">
+    <title>Welcome to Haeundae</title>
+    <link rel="icon" href="./image/favicon.png" type="image/png">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2237e1d4164afe675ac45fd0c6310ad4&libraries=services&autoload=false"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="./image/home/logo.png" alt="로고">
+        </div>
+        <nav>
+            <div><a href="/home.html">HOME</a></div>
+            <div><a href="/tour.html">TOUR</a></div>
+            <div><a href="/food.html">FOOD</a></div>
+            <div><a href="/stay.html">STAY</a></div>
+            <div><a href="/info.html">INFO</a></div>
+        </nav>
+        <div class="hdicons">
+            <div class="naticon">
+                <div class="naticonsub">
+                    <div class="subnat"><img src="./image/home/america.png" alt="usa">ENG</div>
+                    <div class="subnat"><img src="./image/home/japan.png" alt="japan">JAP</div>
+                    <div class="subnat"><img src="./image/home/china.png" alt="china">CHI</div>
+                </div>
+            </div>
+            <div class="hamburger">☰</div>
+        </div>
+
+        <div class="modal">
+            <nav>
+                <div><a href="/tour.html">TOUR</a></div>
+                <div><a href="/food.html">FOOD</a></div>
+                <div><a href="/stay.html">STAY</a></div>
+                <div><a href="/info.html">INFO</a></div>
+            </nav>
+            <button id="mocloseBtn">×</button>
+        </div>
+
+    </header>
+    <!-- 섹션시작임 -->
+    <section class="section"
+        style="background-image: url('./image/info/infobg2.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div id="container">
+            <div class="blankY"></div>
+            <div class="weather-container">
+                <div class="weather-box">
+                    <h2 class="boxTitle">현재날씨</h2>
+                    <div class="weather-content">
+                        <img id="weather-icon" class="weather-icon" src="" alt="날씨 아이콘">
+                        <div id="weather-text" class="weather-text"></div>
+                    </div>
+                </div>
+
+                <div class="forecast-box">
+                    <h2 class="boxTitle">일기예보</h2>
+                    <ul id="forecast">Loading...</ul>
+                </div>
+            </div>
+
+            <div class="directions-box">
+                <h2>🚦 실시간 교통체증</h2>
+                <button onclick="openDirections('해운대해수욕장')">해운대<br>해수욕장</button>
+                <button onclick="openDirections('송정해수욕장')">송정<br>해수욕장</button>
+                <button onclick="openDirections('동백섬')">동백섬</button>
+                <button onclick="openDirections('달맞이길')">달맞이길</button>
+                <button onclick="openDirections('더베이101')">더베이<br>101</button>
+                <button onclick="openDirections('센텀시티')">센텀시티</button>
+                <button onclick="openDirections('해운대전통시장')">해운대<br>전통시장</button>
+                <button onclick="openDirections('블루라인파크')">블루<br>라인파크</button>
+                <div id="map"></div>
+            </div>
+
+            <div class="directions-box">
+                <h2>🚗 네비게이션</h2>
+                <button id="navbtn" onclick="searchPlace('해운대해수욕장')">해운대<br>해수욕장</button>
+                <button id="navbtn" onclick="searchPlace('송정해수욕장')">송정<br>해수욕장</button>
+                <button id="navbtn" onclick="searchPlace('동백섬')">동백섬</button>
+                <button id="navbtn" onclick="searchPlace('달맞이길')">달맞이길</button>
+                <button id="navbtn" onclick="searchPlace('더베이101')">더베이<br>101</button>
+                <button id="navbtn" onclick="searchPlace('센텀시티')">센텀시티</button>
+                <button id="navbtn" onclick="searchPlace('해운대전통시장')">해운대<br>전통시장</button>
+                <button id="navbtn" onclick="searchPlace('블루라인파크')">블루<br>라인파크</button>
+            </div>
+        </div>
+        <div class="blankY"></div>
+    </section>
+
+    <footer>
+        <div>
+            <img src="./image/home/haeundaelogo.png" alt="">
+            <p>웹사이트 교육용 홈페이지 입니다.</p>
+            <div>
+                <p>팀장: 김창우</p>
+                <p>부팀장: 박지훈</p>
+                <p>팀원: 장국현</p>
+                <p>팀원: 이성현</p>
+                <p>팀원: 김정헌</p>
+            </div>
+        </div>       
+    </footer>
+    <!-- footer end -->
+     <div id="topBtn">
+        TOP▲
+     </div>
+     <!-- top버튼 -->
+     <script defer src="./js/info.js"></script>
+</body>
+</html>
